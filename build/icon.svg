@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+	<g>
+		<circle cx="30" cy="30" r="27" stroke-width="4" stroke="#505050" fill="black" fill-opacity="0.5"/>
+		<image xlink:href="phone.png" x="0" y="0" height="208" width="150" transform="scale(0.2) rotate(-20) translate(40,140)"/>
+	</g>
+</svg>

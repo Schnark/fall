@@ -1,0 +1,3 @@
+This app makes your phone scream when it is in free fall, based on the idea from <a href="https://m.xkcd.com/1363/">xkcd</a>. Note that due to restrictions the app must be in the foreground to work.
+
+<strong>Warning:</strong> Do not break your phone while using this app. Or, at least, don't blame me.
