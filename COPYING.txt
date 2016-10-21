@@ -1,4 +1,4 @@
 This work is licensed under a Creative Commons Attribution-NonCommercial 2.5 License: http://creativecommons.org/licenses/by-nc/2.5/
 The image (including the icon) is derived from xkcd (https://xkcd.com/1363/) by Randall Munroe.
 
-You are free to use the rest of the repositories content without any restrictions.
+You are free to use the rest of the repository's content without any restrictions.
