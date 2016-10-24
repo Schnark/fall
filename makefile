@@ -1,29 +1,37 @@
+NAME = fall
 CONTENTS = app.js COPYING.txt icon128.png icon512.png index.html manifest.webapp scream.ogg xkcd_phone.png
+ICONPRE = icon
 
 .PHONY: all
-all: fall.zip fall.manifest.webapp github.manifest.webapp
+all: $(NAME).zip $(NAME).manifest.webapp github.manifest.webapp
 
 .PHONY: clean
 clean:
 	find . -name '*~' -delete
 
 .PHONY: icons
-icons: icon128.png icon512.png
+icons: $(ICONPRE)128.png $(ICONPRE)512.png
 
-icon128.png: icon.svg
-	rsvg-convert -w 128 icon.svg -o icon128.png
-	optipng icon128.png
+$(ICONPRE)128.png: icon.svg
+	rsvg-convert -w 128 icon.svg -o $(ICONPRE)128.png
+	optipng $(ICONPRE)128.png
 
-img/icon512.png: icon.svg
-	rsvg-convert -w 512 icon.svg -o icon512.png
-	optipng icon512.png
+$(ICONPRE)512.png: icon.svg
+	rsvg-convert -w 512 icon.svg -o $(ICONPRE)512.png
+	optipng $(ICONPRE)512.png
 
-fall.zip: clean icons $(CONTENTS)
-	rm -f fall.zip
-	zip -r fall.zip $(CONTENTS)
+$(NAME).zip: clean icons $(CONTENTS)
+	rm -f $(NAME).zip
+	zip -r $(NAME).zip $(CONTENTS)
 
-fall.manifest.webapp: manifest.webapp
-	sed manifest.webapp -e 's/"launch_path"\s*:\s*"[^"]*"/"package_path": "http:\/\/localhost:8080\/fall.zip"/' > fall.manifest.webapp
+#the sed script does the following:
+#look for the line with "launch_path"
+#replace it with the apropriate "package_path"
+#add the size of the zip before that line
+#yes, the quoting is a mess
 
-github.manifest.webapp: manifest.webapp
-	sed manifest.webapp -e 's/"launch_path"\s*:\s*"[^"]*"/"package_path": "https:\/\/schnark.github.io\/fall\/fall.zip"/' > github.manifest.webapp
+$(NAME).manifest.webapp: manifest.webapp $(NAME).zip
+	sed manifest.webapp -e '/launch_path/ {s/"launch_path"\s*:\s*"[^"]*"/"package_path": "http:\/\/localhost:8080\/$(NAME).zip"/ ; e stat --format="\t\\"size\\": %s," $(NAME).zip'$$'\n''}' > $(NAME).manifest.webapp
+
+github.manifest.webapp: manifest.webapp $(NAME).zip
+	sed manifest.webapp -e '/launch_path/ {s/"launch_path"\s*:\s*"[^"]*"/"package_path": "https:\/\/schnark.github.io\/$(NAME)\/$(NAME).zip"/ ; e stat --format="\t\\"size\\": %s," $(NAME).zip'$$'\n''}' > github.manifest.webapp
