@@ -1,0 +1,16 @@
+{
+	"@comment": "Note that the code to transform these data into a webpage is in https://github.com/Schnark/schnark.github.io",
+	"title": {
+		"en": "Aaaaa … – App for Firefox OS",
+		"de": "Aaaaa … – App für Firefox OS"
+	},
+	"serviceworker": true,
+	"icon": "icon128.png",
+	"screenshots": [
+		"screenshot.png"
+	],
+	"desc": {
+		"en": ["This app makes your phone scream when it is in free fall, based on the idea from <a href=\"https://m.xkcd.com/1363/\">xkcd</a>. Note that due to restrictions the app must be in the foreground to work.", "<strong>Warning:</strong> Do not break your phone while using this app. Or, at least, don't blame me."],
+		"de": ["Diese App lässt dein Smartphone schreien, wenn es zu Boden fällt, basierend auf der Idee von <a href=\"https://m.xkcd.com/1363/\">xkcd</a>. Beachte, dass auf Grund von Einschränkungen die App im Vordergrund sein muss, damit sie funktioniert.", "<strong>Achtung:</strong> Mach dein Smartphone nicht kaputt, wenn du diese App verwendest. Oder mach zumindest mich nicht dafür verantwortlich."]
+	}
+}
