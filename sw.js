@@ -2,7 +2,7 @@
 (function (worker) {
 "use strict";
 
-var VERSION = 'v2.1',
+var VERSION = 'v2.2',
 	FILES = [
 		'app.js',
 		'index.html',

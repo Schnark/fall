@@ -1,8 +1,8 @@
 {
-	"version": "2.1",
+	"version": "2.2",
 	"name": "Aaaaa...",
 	"description": "Make your phone scream when it is in free fall",
-	"size": 59099,
+	"size": 78888,
 	"package_path": "https://schnark.github.io/fall/fall.zip",
 	"icons": {
 		"128": "/icon128.png",
@@ -12,6 +12,5 @@
 		"name": "Michael Müller",
 		"url": "https://github.com/Schnark"
 	},
-	"installs_allowed_from": ["*"],
 	"default_locale": "en"
 }
