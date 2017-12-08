@@ -9,6 +9,7 @@ all: $(NAME).zip $(NAME).manifest.webapp github.manifest.webapp
 clean:
 	find . -name '*~' -delete
 
+#I have no idea how I really optimized the PNGs
 .PHONY: icons
 icons: $(ICONPRE)128.png $(ICONPRE)512.png
 
